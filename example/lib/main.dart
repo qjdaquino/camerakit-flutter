@@ -1,6 +1,8 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:camerakit_flutter/configuration_camerakit.dart';
 import 'package:camerakit_flutter_example/media_result_screen.dart';
 import 'package:camerakit_flutter_example/lens_list_screen.dart';
+import 'package:camerakit_flutter_example/tips_module.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
@@ -8,10 +10,12 @@ import 'package:flutter/services.dart';
 import 'package:camerakit_flutter/camerakit_flutter.dart';
 import 'package:camerakit_flutter/lens_model.dart';
 import 'constants.dart';
+import 'package:camerakit_flutter_example/contact_details.dart';
 
 void main() {
   runApp(const MaterialApp(
     home: MyApp(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -29,7 +33,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   late String _fileType = '';
   late List<Lens> lensList = [];
   late final _cameraKitFlutterImpl =
-      CameraKitFlutterImpl(cameraKitFlutterEvents: this);
+  CameraKitFlutterImpl(cameraKitFlutterEvents: this);
   bool isLensListPressed = false;
 
   @override
@@ -73,7 +77,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Camera Kit'),
+        title: const Text('Camera Kit '),
       ),
       body: Center(
         child: Column(
@@ -86,13 +90,25 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   setState(() {});
                   getGroupLenses();
                 },
-                child: const Text("Show Lens List")),
+                child: const Text("Lens List")),
             ElevatedButton(
                 onPressed: () {
                   initCameraKit();
                 },
                 child: const Text("Open CameraKit")),
-            isLensListPressed ? const CircularProgressIndicator() : Container()
+            isLensListPressed ? const CircularProgressIndicator() : Container(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyContact()));
+                },
+                child: const Text("Contact")),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Safetytips()));
+                },
+                child: const Text("Safety and Information Tips")),
           ],
         ),
       ),
@@ -107,9 +123,9 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
 
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => MediaResultWidget(
-                filePath: _filePath,
-                fileType: _fileType,
-              )));
+            filePath: _filePath,
+            fileType: _fileType,
+          )));
     });
   }
 
