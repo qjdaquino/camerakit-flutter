@@ -1,3 +1,5 @@
+package android
+
 group 'com.camerakit.camerakit_flutter'
 version '1.0-SNAPSHOT'
 
@@ -11,6 +13,7 @@ buildscript {
     dependencies {
         classpath 'com.android.tools.build:gradle:7.3.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
     }
 }
 
@@ -54,6 +57,10 @@ android {
         testImplementation 'org.mockito:mockito-core:5.0.0'
         implementation "com.snap.camerakit:support-camera-activity:1.26.1"
         implementation 'com.google.code.gson:gson:2.8.8' // Use the latest version available
+
+        def lifecycle_version = "2.4.0"
+        implementation "androidx.lifecycle:lifecycle-viewmodel:$lifecycle_version"
+        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
     }
 
     testOptions {
