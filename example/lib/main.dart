@@ -1,3 +1,4 @@
+// ignore_for_file: prefer_const_constructors
 import 'package:camerakit_flutter/configuration_camerakit.dart';
 import 'package:camerakit_flutter_example/media_result_screen.dart';
 import 'package:camerakit_flutter_example/lens_list_screen.dart';
@@ -8,10 +9,14 @@ import 'package:flutter/services.dart';
 import 'package:camerakit_flutter/camerakit_flutter.dart';
 import 'package:camerakit_flutter/lens_model.dart';
 import 'constants.dart';
+import 'package:camerakit_flutter_example/contact_details.dart';
+import 'package:camerakit_flutter_example/safety_info.dart';
+import 'package:camerakit_flutter_example/user_guide.dart';
 
 void main() {
   runApp(const MaterialApp(
     home: MyApp(),
+    debugShowCheckedModeBanner: false,
   ));
 }
 
@@ -29,7 +34,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   late String _fileType = '';
   late List<Lens> lensList = [];
   late final _cameraKitFlutterImpl =
-      CameraKitFlutterImpl(cameraKitFlutterEvents: this);
+  CameraKitFlutterImpl(cameraKitFlutterEvents: this);
   bool isLensListPressed = false;
 
   @override
@@ -73,7 +78,9 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Camera Kit'),
+        title: const Text('Main Menu'),
+        backgroundColor: Colors.orangeAccent,
+        centerTitle: true,
       ),
       body: Center(
         child: Column(
@@ -86,13 +93,61 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
                   setState(() {});
                   getGroupLenses();
                 },
-                child: const Text("Show Lens List")),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Lens List",
+                  style: TextStyle(fontSize: 29),
+                )),
             ElevatedButton(
                 onPressed: () {
                   initCameraKit();
                 },
-                child: const Text("Open CameraKit")),
-            isLensListPressed ? const CircularProgressIndicator() : Container()
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Scan Now",
+                  style: TextStyle(fontSize: 26),
+                )),
+            isLensListPressed ? const CircularProgressIndicator() : Container(),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyContact()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Contact",
+                  style: TextStyle(fontSize: 33),
+                )),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Safetytips()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Safety Info.",
+                  style: TextStyle(fontSize: 23),
+                )),
+            ElevatedButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => MyGuide()));
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.orangeAccent,
+                ),
+                child: const Text(
+                  "Tutorial",
+                  style: TextStyle(fontSize: 34),
+                )),
           ],
         ),
       ),
@@ -107,9 +162,9 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
 
       Navigator.of(context).push(MaterialPageRoute(
           builder: (context) => MediaResultWidget(
-                filePath: _filePath,
-                fileType: _fileType,
-              )));
+            filePath: _filePath,
+            fileType: _fileType,
+          )));
     });
   }
 
