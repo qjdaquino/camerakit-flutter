@@ -127,7 +127,7 @@ class _MyAppState extends State<MyApp> implements CameraKitFlutterEvents {
             ElevatedButton(
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Safetytips()));
+                      MaterialPageRoute(builder: (context) => MyGuide()));
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.orangeAccent,
