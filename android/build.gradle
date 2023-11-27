@@ -1,5 +1,3 @@
-package android
-
 group 'com.camerakit.camerakit_flutter'
 version '1.0-SNAPSHOT'
 
