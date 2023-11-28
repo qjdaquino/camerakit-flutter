@@ -46,9 +46,6 @@ class _YoutubePlayerCustomSubtitleState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("SAFETY INFO 1"),
-      ),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -57,13 +54,22 @@ class _YoutubePlayerCustomSubtitleState
               margin: const EdgeInsets.all(0),
               child: YoutubePlayer(controller: _controller),
             ),
-            const SizedBox(height: 50.0),
+            const SizedBox(height: 20.0),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
+              child: Text(
+                'Custom Subtitle Title', // Add your desired title here
+                style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
+                textAlign: TextAlign.center,
+              ),
+            ),
+            const SizedBox(height: 20.0),
             Padding(
-              padding: const EdgeInsets.all(0),
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
                 subtitleText,
-                style: const TextStyle(fontSize: 17, color: Colors.black),
-                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 17, color: Colors.black87),
+                textAlign: TextAlign.justify,
               ),
             ),
           ],
@@ -71,6 +77,7 @@ class _YoutubePlayerCustomSubtitleState
       ),
     );
   }
+
 
   @override
   void dispose() {
