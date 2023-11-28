@@ -109,7 +109,7 @@ class SafetyInfo extends StatelessWidget {
                                 context: context,
                                 builder: (BuildContext context) {
                                   return AlertDialog(
-                                    title: Text('Dialog for ${safetyInfoList[index]}'),
+                                    title: const Text(''),
                                     content: _buildDialogContent(index),
                                     actions: <Widget>[
                                       TextButton(

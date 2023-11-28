@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
-import 'package:camerakit_flutter_example/main.dart';
+
 
 class YoutubePlayerCustomSubtitle extends StatefulWidget {
   final String videoId = 'fnl_-oBQF9M';
@@ -15,12 +15,11 @@ class _YoutubePlayerCustomSubtitleState
     extends State<YoutubePlayerCustomSubtitle> {
   late YoutubePlayerController _controller;
 
-  // For Custom Subtitle and Subtitle displayin duration
-  List<Subtitle> subtitle = [
+  // For Custom Subtitle and Subtitle displaying duration
+  List<Subtitle> subtitle = [];
 
-    // add mor subtitle as your requirement
-  ];
-  String subtitleText = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.";
+  String subtitleText =
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."; // Your subtitle text here
 
   @override
   void initState() {
@@ -35,7 +34,7 @@ class _YoutubePlayerCustomSubtitleState
     if (_controller.value.playerState == PlayerState.playing) {
       final currentTime = _controller.value.position.inSeconds;
       final currentSubtitle = subtitle.firstWhere((subtitle) =>
-          currentTime >= subtitle.start && currentTime <= subtitle.end);
+      currentTime >= subtitle.start && currentTime <= subtitle.end);
 
       // Update the UI with the current subtitle
       setState(() {
@@ -54,15 +53,17 @@ class _YoutubePlayerCustomSubtitleState
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            YoutubePlayer(controller: _controller),
+            Card(
+              margin: const EdgeInsets.all(0),
+              child: YoutubePlayer(controller: _controller),
+            ),
+            const SizedBox(height: 50.0),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: SingleChildScrollView(
-                child: Text(
-                  subtitleText,
-                  style: const TextStyle(fontSize: 17, color: Colors.black),
-                  textAlign: TextAlign.center,
-                ),
+              padding: const EdgeInsets.all(0),
+              child: Text(
+                subtitleText,
+                style: const TextStyle(fontSize: 17, color: Colors.black),
+                textAlign: TextAlign.center,
               ),
             ),
           ],
@@ -70,8 +71,6 @@ class _YoutubePlayerCustomSubtitleState
       ),
     );
   }
-
-
 
   @override
   void dispose() {
