@@ -78,13 +78,25 @@ class SafetyInfo extends StatelessWidget {
                   // Display images above Safety Info 1 and 6
                   return Column(
                     children: [
-                      Image.network(
-                        index == 0
-                            ? 'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg' // Image URL for Safety Info 1
-                            : 'https://media.istockphoto.com/id/1251567184/vector/fire-vector-isolated.jpg?s=612x612&w=0&k=20&c=l_BL45O1J5P94wGtfq_k7XxStOwrwSvvGWs8pipUzUI=', // Replace with your second image URL
-                        height: 200, // Adjust the height as needed
-                        width: double.infinity,
-                        fit: BoxFit.cover,
+                      Card(
+                        margin: const EdgeInsets.all(30.0),
+                        child: Container(
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(120.0),
+                            border: Border.all(color: Colors.grey),
+                          ),
+                          child: ClipRRect(
+                            borderRadius: BorderRadius.circular(12.0),
+                            child: Image.network(
+                              index == 0
+                                  ? 'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg' // Image URL for Safety Info 1
+                                  : 'https://media.istockphoto.com/id/1251567184/vector/fire-vector-isolated.jpg?s=612x612&w=0&k=20&c=l_BL45O1J5P94wGtfq_k7XxStOwrwSvvGWs8pipUzUI=', // Replace with your second image URL
+                              height: 300, // Adjust the height as needed
+                              width: double.infinity, // Occupy full width of the screen
+                              fit: BoxFit.cover,
+                            ),
+                          ),
+                        ),
                       ),
                       Card(
                         margin: const EdgeInsets.all(8.0),
