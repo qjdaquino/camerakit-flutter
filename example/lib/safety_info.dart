@@ -65,39 +65,92 @@ class SafetyInfo extends StatelessWidget {
         ),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: safetyInfoList.length,
-        itemBuilder: (BuildContext context, int index) {
-          return Card(
-            margin: const EdgeInsets.all(8.0),
-            child: ListTile(
-              title: Text(safetyInfoList[index]),
-              trailing: ElevatedButton(
-                onPressed: () {
-                  // Open a dialog when the button is pressed
-                  showDialog(
-                    context: context,
-                    builder: (BuildContext context) {
-                      return AlertDialog(
-                        title: Text('Dialog for ${safetyInfoList[index]}'),
-                        content: _buildDialogContent(index),
-                        actions: <Widget>[
-                          TextButton(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            ListView.builder(
+              shrinkWrap: true,
+              physics: const NeverScrollableScrollPhysics(),
+              itemCount: safetyInfoList.length,
+              itemBuilder: (BuildContext context, int index) {
+                if (index == 0 || index == 5) {
+                  // Display image above Safety Info 1 and 6
+                  return Column(
+                    children: [
+                      Image.network(
+                        'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg', // Replace with your image URL
+                        height: 200, // Adjust the height as needed
+                        width: double.infinity,
+                        fit: BoxFit.cover,
+                      ),
+                      Card(
+                        margin: const EdgeInsets.all(8.0),
+                        child: ListTile(
+                          title: Text(safetyInfoList[index]),
+                          trailing: ElevatedButton(
                             onPressed: () {
-                              Navigator.of(context).pop(); // Close the dialog
+                              // Open a dialog when the button is pressed
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    title: Text('Dialog for ${safetyInfoList[index]}'),
+                                    content: _buildDialogContent(index),
+                                    actions: <Widget>[
+                                      TextButton(
+                                        onPressed: () {
+                                          Navigator.of(context).pop(); // Close the dialog
+                                        },
+                                        child: const Text('Close'),
+                                      ),
+                                    ],
+                                  );
+                                },
+                              );
                             },
-                            child: const Text('Close'),
+                            child: const Text('Button'),
                           ),
-                        ],
-                      );
-                    },
+                        ),
+                      ),
+                    ],
                   );
-                },
-                child: const Text('Button'),
-              ),
+                } else {
+                  // For other safety info items
+                  return Card(
+                    margin: const EdgeInsets.all(8.0),
+                    child: ListTile(
+                      title: Text(safetyInfoList[index]),
+                      trailing: ElevatedButton(
+                        onPressed: () {
+                          // Open a dialog when the button is pressed
+                          showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                title: Text('Dialog for ${safetyInfoList[index]}'),
+                                content: _buildDialogContent(index),
+                                actions: <Widget>[
+                                  TextButton(
+                                    onPressed: () {
+                                      Navigator.of(context).pop(); // Close the dialog
+                                    },
+                                    child: const Text('Close'),
+                                  ),
+                                ],
+                              );
+                            },
+                          );
+                        },
+                        child: const Text('Button'),
+                      ),
+                    ),
+                  );
+                }
+              },
             ),
-          );
-        },
+          ],
+        ),
       ),
     );
   }
