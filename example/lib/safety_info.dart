@@ -75,11 +75,13 @@ class SafetyInfo extends StatelessWidget {
               itemCount: safetyInfoList.length,
               itemBuilder: (BuildContext context, int index) {
                 if (index == 0 || index == 5) {
-                  // Display image above Safety Info 1 and 6
+                  // Display images above Safety Info 1 and 6
                   return Column(
                     children: [
                       Image.network(
-                        'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg', // Replace with your image URL
+                        index == 0
+                            ? 'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg' // Image URL for Safety Info 1
+                            : 'https://media.istockphoto.com/id/1251567184/vector/fire-vector-isolated.jpg?s=612x612&w=0&k=20&c=l_BL45O1J5P94wGtfq_k7XxStOwrwSvvGWs8pipUzUI=', // Replace with your second image URL
                         height: 200, // Adjust the height as needed
                         width: double.infinity,
                         fit: BoxFit.cover,
