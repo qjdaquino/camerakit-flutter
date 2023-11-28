@@ -17,10 +17,10 @@ class _YoutubePlayerCustomSubtitleState
 
   // For Custom Subtitle and Subtitle displayin duration
   List<Subtitle> subtitle = [
-    Subtitle(start: 2, end: 10, text: "Animated Contatiner Widget in Flutter"),
+    Subtitle(start: 2, end: 10, text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."),
     // subtitle start at 2 second and end at 10 second
     Subtitle(start: 10, end: 20, text: "You can add your custom subtitle"),
-    Subtitle(start: 20, end: 100, text: ""),
+    Subtitle(start: 20, end: 100, text: "asdasdasdasdasdasdasdsd"),
     // add mor subtitle as your requirement
   ];
   String subtitleText = "";
@@ -51,18 +51,22 @@ class _YoutubePlayerCustomSubtitleState
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("YouTube Player with Custom Subtitles"),
+        title: const Text("SAFETY INFO 1"),
       ),
-      body: Stack(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          YoutubePlayer(controller: _controller),
+          Expanded(
+            child: YoutubePlayer(controller: _controller),
+          ),
           Padding(
-            padding: const EdgeInsets.only(left: 8.0, top: 190),
+            padding: const EdgeInsets.all(8.0),
             child: Text(
               subtitleText,
-              style: const TextStyle(fontSize: 17, color: Colors.white),
+              style: const TextStyle(fontSize: 17, color: Colors.black),
+              textAlign: TextAlign.center,
             ),
-          )
+          ),
         ],
       ),
     );
