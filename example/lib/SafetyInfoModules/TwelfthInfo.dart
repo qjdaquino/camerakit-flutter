@@ -3,7 +3,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
 class TwelfthInfo extends StatefulWidget {
-  final String videoId = 'MGqfvhtbmOQ';
+  final String videoId = 'PQV71INDaqY';
   const TwelfthInfo({super.key});
 
   @override
@@ -19,7 +19,7 @@ class _TwelfthInfo
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
+      "Fire extinguishers are common and useful tools against fires. They’re so common that you probably walked past one as you headed to work today.No matter home many times in a day you pass by the fire extinguisher in your office, you probably don’t know how to use it.When it comes to fires, not knowing how to use a fire extinguisher can cost you a lot. Remember, during emergencies, you can’t be fumbling around.Before learning how to use a fire extinguisher, you first have to know the different types. There are five different kinds of extinguishers based on the fires they can put out:Class A: fires fueled by everyday solid combustibles like paper and woodClass B: fuel- and gas-based firesClass C: fires caused by electricityClass D: fires fueled by flammable metalsClass K: used to extinguish oil and grease firesUsing a fire extinguisher is pretty straightforward and takes only minutes to learn. However, there are some necessary steps to using a fire extinguisher.There is a short and easy-to-remember acronym for using fire extinguishers. When the time comes that you need to use a fire extinguisher, remember to PASS:● PULL the safety pin from the handle. You won’t be able to use the extinguisher if you don’t pull it out.● AIM the nozzle at the base of the fire. Don’t hit the top of the flames.● SQUEEZE the trigger slowly. Moderate the pressure so you can control how much fluid comes out of the extinguisher.● SWEEP the nozzle from side to side. Not too fast or slow. Remember to aim at the base of the fire.Like smoke alarms, fire extinguishers also need the right amount of maintenance. Here are some fire safety tips for keeping your extinguishers in tip-top shape:● Make it a habit to visually inspect your fire extinguishers at home and work at least once a month. Their seals should be in-tact and undamaged in any way.● Have a professional inspect your fire extinguishers annually.● Empty and refill your extinguishers every six years. Make sure to consult a professional when doing this."; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _TwelfthInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Secure Your Space', // Add your desired title here
+                'Learn to Use a Fire Extinguisher', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),

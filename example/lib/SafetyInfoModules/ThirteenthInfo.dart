@@ -3,7 +3,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
 class ThirteenthInfo extends StatefulWidget {
-  final String videoId = 'MGqfvhtbmOQ';
+  final String videoId = 'sMSt-TWL_w0';
   const ThirteenthInfo({super.key});
 
   @override
@@ -19,7 +19,7 @@ class _ThirteenthInfo
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
+      "Fires at work can be devastating. They pose a risk not only to the people inside the building.Workplace or building fires also affect the public. This is why preventing fires at the workplace is just as crucial as avoiding them at home.To keep you and yourself safe from building or office fires, make sure to check off all the items on this fire safety checklist:● Remove office fire hazards like faulty outlets, fraying electrical cords, and overloaded sockets.● Keep the office open and well-ventilated.● Make sure smoke alarms on all floors are working.● Promote fire safety by ensuring your entire floor attends and participates in fire drills.● Know where the maintenance staff keeps the fire extinguishers.● Keep the inside of the office as a no-smoking zone.● Add emergency hotlines in your office’s telephone directory on the automatic dial.● Unplug idle appliances like coffee makers and microwaves when nobody is using them.While fires may be unpredictable and destructive, they are also highly preventable. By practicing fire safety and prevention in your home and workplace, you make your community a safer place to live."; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _ThirteenthInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Secure Your Space', // Add your desired title here
+                'Have a Workplace Fire Safety Checklist', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),

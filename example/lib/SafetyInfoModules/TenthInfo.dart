@@ -3,7 +3,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
 class TenthInfo extends StatefulWidget {
-  final String videoId = 'MGqfvhtbmOQ';
+  final String videoId = 'tbPKVMpEA6M';
   const TenthInfo({super.key});
 
   @override
@@ -19,7 +19,7 @@ class _TenthInfo
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
+      "Another fire safety and prevention tip to follow is to stay on top of your home electrical wiring system. Many fires also spark from faulty or dilapidated electrical wiring.As electrical wires hide behind the walls, it might be hard to check upon them. Here are some tips to help you keep your electrical wiring system in check:● Have a professional inspect the wires in your home. Do this at least once a year.● Replace faulty light bulbs in your house.● Call a professional right away if you’re experiencing intermittent electricity.● Don’t use exploded outlets."; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _TenthInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Secure Your Space', // Add your desired title here
+                'Stay on Top of Your Electrical Wiring System', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),
