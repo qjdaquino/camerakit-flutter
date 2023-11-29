@@ -18,7 +18,7 @@ class SafetyInfo extends StatelessWidget {
 
   // Mock data for the list of safety information
   final List<String> safetyInfoList = [
-    'Default',
+    'Earthquake',
     'Secure Your Space',
     'Plan to be Safe',
     'Organize Disaster Supplies',
@@ -26,6 +26,7 @@ class SafetyInfo extends StatelessWidget {
     'Drop, Cover, and Hold On',
     'Improve Safety',
     'Reconnect and Restore',
+    'Fire',
     'Always Have an Escape Plan',
     'Install Smoke Alarms in Your Place',
     'Stay on Top of Your Electrical Wiring System',
@@ -39,8 +40,9 @@ class SafetyInfo extends StatelessWidget {
   Widget _buildDialogContent(int index) {
     // Customize the content based on the index or safety information selected
     switch (index) {
+     // start of earthquake modules
       case 0:
-        return const FirstInfo();
+        return const FirstInfo(); //NATATAKPAN NG PICTURE
       case 1:
         return const FirstInfo();
       case 2:
@@ -55,21 +57,23 @@ class SafetyInfo extends StatelessWidget {
         return const SixthInfo();
       case 7:
         return const SeventhInfo();
+        // end of eathquake modules
+      // start of fire modules
       case 8:
-        return const EighthInfo();
+        return const EighthInfo(); //NATATAKPAN NG PICTURE
       case 9:
-        return const NinthInfo();
+        return const EighthInfo();
       case 10:
-        return const TenthInfo();
+        return const NinthInfo();
       case 11:
-        return const EleventhInfo();
+        return const TenthInfo();
       case 12:
-        return const TwelfthInfo();
+        return const EleventhInfo();
       case 13:
+        return const TwelfthInfo();
+      case 14:
         return const ThirteenthInfo();
-
-
-
+//end of fire modules
     // Add cases for other safety information as needed
       default:
         return const Text('Default Content');
@@ -100,8 +104,8 @@ class SafetyInfo extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: safetyInfoList.length,
               itemBuilder: (BuildContext context, int index) {
-                if (index == 0 || index == 7) {
-                  // Display images above Safety Info 1 and 6
+                if (index == 0 || index == 8) {
+                  // Display images
                   return Column(
                     children: [
                       Card(
@@ -115,8 +119,8 @@ class SafetyInfo extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12.0),
                             child: Image.network(
                               index == 0
-                                  ? 'https://static.vecteezy.com/system/resources/previews/007/640/091/original/earthquake-illustration-on-a-background-premium-quality-symbols-icons-for-concept-and-graphic-design-vector.jpg' // Image URL for Safety Info 1
-                                  : 'https://media.istockphoto.com/id/1251567184/vector/fire-vector-isolated.jpg?s=612x612&w=0&k=20&c=l_BL45O1J5P94wGtfq_k7XxStOwrwSvvGWs8pipUzUI=', // Replace with your second image URL
+                                  ? 'https://i.gifer.com/OCWu.gif' // Image URL for Safety Info 1
+                                  : 'https://i.pinimg.com/originals/80/32/57/803257d14d41523a89ca1e0fdd778112.gif', // Replace with your second image URL
                               height: 300, // Adjust the height as needed
                               width: double.infinity, // Occupy full width of the screen
                               fit: BoxFit.cover,

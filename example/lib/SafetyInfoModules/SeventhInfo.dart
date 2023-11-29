@@ -19,7 +19,7 @@ class _SeventhInfo
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
+      "Restore daily life by reconnecting with others, repairing damage, and rebuilding community. "; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _SeventhInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Secure Your Space', // Add your desired title here
+                'Reconnect and Restore', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),
