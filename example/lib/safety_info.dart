@@ -1,21 +1,24 @@
 import 'package:flutter/material.dart';
-import 'package:camerakit_flutter_example/youtube_player_custom_subtitles.dart';
+import 'SafetyInfoModules/FirstInfo.dart';
 
 class SafetyInfo extends StatelessWidget {
   SafetyInfo({Key? key});
 
   // Mock data for the list of safety information
   final List<String> safetyInfoList = [
-    'Safety Info 1',
-    'Safety Info 2',
-    'Safety Info 3',
-    'Safety Info 4',
-    'Safety Info 5',
-    'Safety Info 6',
-    'Safety Info 7',
-    'Safety Info 8',
-    'Safety Info 9',
-    'Safety Info 10',
+    'Secure Your Space',
+    'Plan to be Safe',
+    'Organize Disaster Supplies',
+    'Minimize Financial Hardship',
+    'Drop, Cover, and Hold On',
+    'Improve Safety',
+    'Reconnect and Restore',
+    'Always Have an Escape Plan',
+    'Install Smoke Alarms in Your Place',
+    'Stay on Top of Your Electrical Wiring System',
+    'Take Special Fire Precautions in the Kitchen',
+    'Learn to Use a Fire Extinguisher',
+    'Have a  Fire Safety Checklist',
     // Add more safety information as needed
   ];
 
@@ -24,7 +27,7 @@ class SafetyInfo extends StatelessWidget {
     // Customize the content based on the index or safety information selected
     switch (index) {
       case 0:
-        return const YoutubePlayerCustomSubtitle();
+        return const FirstInfo();
       case 1:
         return const Text('2');
       case 2:
@@ -43,6 +46,15 @@ class SafetyInfo extends StatelessWidget {
         return const Text('9');
       case 9:
         return const Text('10');
+      case 10:
+        return const Text('11');
+      case 11:
+        return const Text('12');
+      case 12:
+        return const Text('13');
+      case 13:
+        return const Text('14');
+
 
     // Add cases for other safety information as needed
       default:
@@ -74,7 +86,7 @@ class SafetyInfo extends StatelessWidget {
               physics: const NeverScrollableScrollPhysics(),
               itemCount: safetyInfoList.length,
               itemBuilder: (BuildContext context, int index) {
-                if (index == 0 || index == 5) {
+                if (index == 0 || index == 7) {
                   // Display images above Safety Info 1 and 6
                   return Column(
                     children: [

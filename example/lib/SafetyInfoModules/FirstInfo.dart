@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
-class YoutubePlayerCustomSubtitle extends StatefulWidget {
-  final String videoId = 'fnl_-oBQF9M';
-  const YoutubePlayerCustomSubtitle({super.key});
+class FirstInfo extends StatefulWidget {
+  final String videoId = 'MGqfvhtbmOQ';
+  const FirstInfo({super.key});
 
   @override
-  State<YoutubePlayerCustomSubtitle> createState() =>
+  State<FirstInfo> createState() =>
       _YoutubePlayerCustomSubtitleState();
 }
 
 class _YoutubePlayerCustomSubtitleState
-    extends State<YoutubePlayerCustomSubtitle> {
+    extends State<FirstInfo> {
   late YoutubePlayerController _controller;
 
   // For Custom Subtitle and Subtitle displaying duration
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..ndustry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..Lorem Ipsum has been the industry's standard dummy text ever since the 1500s..."; // Your subtitle text here
+      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _YoutubePlayerCustomSubtitleState
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Custom Subtitle Title', // Add your desired title here
+                'Secure Your Space', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),
@@ -68,7 +68,7 @@ class _YoutubePlayerCustomSubtitleState
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Text(
                 subtitleText,
-                style: TextStyle(fontSize: 17, color: Colors.black87),
+                style: const TextStyle(fontSize: 17, color: Colors.black87),
                 textAlign: TextAlign.justify,
               ),
             ),
