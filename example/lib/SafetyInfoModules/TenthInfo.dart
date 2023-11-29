@@ -2,24 +2,24 @@ import 'package:flutter/material.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
-class SecondInfo extends StatefulWidget {
-  final String videoId = '8zkndIcA4ck';
-  const SecondInfo({super.key});
+class TenthInfo extends StatefulWidget {
+  final String videoId = 'MGqfvhtbmOQ';
+  const TenthInfo({super.key});
 
   @override
-  State<SecondInfo> createState() =>
-      _SecondInfo();
+  State<TenthInfo> createState() =>
+      _TenthInfo();
 }
 
-class _SecondInfo
-    extends State<SecondInfo> {
+class _TenthInfo
+    extends State<TenthInfo> {
   late YoutubePlayerController _controller;
 
   // For Custom Subtitle and Subtitle displaying duration
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Plan to be safe by creating a disaster plan and deciding how you will communicate in an emergency"; // Your subtitle text here
+      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _SecondInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Plan to be Safe', // Add your desired title here
+                'Secure Your Space', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),

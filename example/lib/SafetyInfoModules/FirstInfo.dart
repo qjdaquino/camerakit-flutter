@@ -8,10 +8,10 @@ class FirstInfo extends StatefulWidget {
 
   @override
   State<FirstInfo> createState() =>
-      _YoutubePlayerCustomSubtitleState();
+      _FirstInfo();
 }
 
-class _YoutubePlayerCustomSubtitleState
+class _FirstInfo
     extends State<FirstInfo> {
   late YoutubePlayerController _controller;
 

@@ -1,3 +1,15 @@
+import 'package:camerakit_flutter_example/SafetyInfoModules/EigthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/EleventhInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/FifthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/FourthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/NinthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/SecondInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/SeventhInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/SixthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/TenthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/ThirdInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/ThirteenthInfo.dart';
+import 'package:camerakit_flutter_example/SafetyInfoModules/TwelfthInfo.dart';
 import 'package:flutter/material.dart';
 import 'SafetyInfoModules/FirstInfo.dart';
 
@@ -6,6 +18,7 @@ class SafetyInfo extends StatelessWidget {
 
   // Mock data for the list of safety information
   final List<String> safetyInfoList = [
+    'Default',
     'Secure Your Space',
     'Plan to be Safe',
     'Organize Disaster Supplies',
@@ -29,31 +42,32 @@ class SafetyInfo extends StatelessWidget {
       case 0:
         return const FirstInfo();
       case 1:
-        return const Text('2');
+        return const FirstInfo();
       case 2:
-        return const Text('3');
+        return const SecondInfo();
       case 3:
-        return const Text('4');
+        return const ThirdInfo();
       case 4:
-        return const Text('5');
+        return const FourthInfo();
       case 5:
-        return const Text('6');
+        return const FifthInfo();
       case 6:
-        return const Text('7');
+        return const SixthInfo();
       case 7:
-        return const Text('8');
+        return const SeventhInfo();
       case 8:
-        return const Text('9');
+        return const EighthInfo();
       case 9:
-        return const Text('10');
+        return const NinthInfo();
       case 10:
-        return const Text('11');
+        return const TenthInfo();
       case 11:
-        return const Text('12');
+        return const EleventhInfo();
       case 12:
-        return const Text('13');
+        return const TwelfthInfo();
       case 13:
-        return const Text('14');
+        return const ThirteenthInfo();
+
 
 
     // Add cases for other safety information as needed
@@ -110,35 +124,6 @@ class SafetyInfo extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Card(
-                        margin: const EdgeInsets.all(8.0),
-                        child: ListTile(
-                          title: Text(safetyInfoList[index]),
-                          trailing: ElevatedButton(
-                            onPressed: () {
-                              // Open a dialog when the button is pressed
-                              showDialog(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return AlertDialog(
-                                    title: const Text(''),
-                                    content: _buildDialogContent(index),
-                                    actions: <Widget>[
-                                      TextButton(
-                                        onPressed: () {
-                                          Navigator.of(context).pop(); // Close the dialog
-                                        },
-                                        child: const Text('Close'),
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            },
-                            child: const Text('Button'),
-                          ),
-                        ),
-                      ),
                     ],
                   );
                 } else {
@@ -154,7 +139,7 @@ class SafetyInfo extends StatelessWidget {
                             context: context,
                             builder: (BuildContext context) {
                               return AlertDialog(
-                                title: Text('Dialog for ${safetyInfoList[index]}'),
+                                title: const Text(''),
                                 content: _buildDialogContent(index),
                                 actions: <Widget>[
                                   TextButton(
