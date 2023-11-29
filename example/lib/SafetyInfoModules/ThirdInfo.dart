@@ -3,7 +3,7 @@ import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 
 
 class ThirdInfo extends StatefulWidget {
-  final String videoId = 'MGqfvhtbmOQ';
+  final String videoId = '8zkndIcA4ck';
   const ThirdInfo({super.key});
 
   @override
@@ -19,7 +19,7 @@ class _ThirdInfo
   List<Subtitle> subtitle = [];
 
   String subtitleText =
-      "Secure your space by identifying hazards and securing moveable items"; // Your subtitle text here
+      "Organize disaster supplies in convenient locations."; // Your subtitle text here
 
   @override
   void initState() {
@@ -58,7 +58,7 @@ class _ThirdInfo
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Secure Your Space', // Add your desired title here
+                'Organize Disaster Supplies', // Add your desired title here
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blue),
                 textAlign: TextAlign.center,
               ),
